@@ -17,3 +17,14 @@ se puede abrir desde otros dispositivos.
 FastApi hace uso de swagger para generar una documentación de nuestra app. Para ver esta le añadimos a
 nuestra url /docs, allí encontramos un json con los objetos que se tienen en el navegador. Dentro de esta
 dirección encontraremos nuestros endopoints, sus parémetros y la forma de hacer peticiones en estos.
+
+## Anotaciones
+
+Cuando añadimos un parámetro query, debemos poner en la ruta al final un "/", para que fastApi lo indentifique, ejemplo:
+ 
+ ```
+@app.get('/<endopoint name>/', tags=['tag name'])
+def function_name(query_parameter: type):
+    return query_parameter
+
+```
