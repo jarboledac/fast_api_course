@@ -28,3 +28,6 @@ def function_name(query_parameter: type):
     return query_parameter
 
 ```
+
+Con la clase Body, al tener endopoints de tipo Post, le decimos a FastApi que estos vienen a través del cuerpo de la petición
+y no como unos parámetro queries.
