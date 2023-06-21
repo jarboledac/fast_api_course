@@ -5,6 +5,8 @@ app = FastAPI()
 app.title = "Mi aplicación con FastApi" #Title in docs
 app.version = "0.0.1"
 
+
+
 movies = [
     {
         'id': 1,
@@ -16,7 +18,7 @@ movies = [
     },
     {
         'id': 2,
-        'title': 'Avatar',
+        'title': 'Avatar2',
         'overview': 'En un exuberante planeta...',
         'year': '2009',
         'rating': 7.8,
@@ -35,10 +37,9 @@ def get_movies():
 @app.get('/movies/{id}', tags=['movies'])
 def get_movies(id: int):
     for item in movies:
-        if item[id] == id:
+        if item['id'] == id:
             return item
-        else:
-            return []
+    return []
 
 @app.get('/movies/', tags=['movies'])
 def get_movies_by_category(category: str, year: int):
